@@ -5,9 +5,7 @@ const usePopMsg = () => {
 
   const getMsg = (msg : string) => {
     return new Promise((resolve, reject) => {
-      console.log('=======================hello============')
       setTimeout(() => {
-        console.log('=======================================')
         renderMsg.value = msg
         if(msg==='Error') {
           reject('Error')
