@@ -14,9 +14,9 @@ describe('spyOn 활용', () => {
     expect(spyFn).toBeCalledTimes(1);
   })
 
-  test('어느 정도의 호출 빈도가 있었는가?', () => {
+  test('어떤 인자들을 사용했는가?', () => {
 
-    expect(spyFn).toBeCalledWith(2,5);
+    expect(spyFn).toBeCalledWith(2,3);
   })
 
   test('최종 값은 얼마인가?', () => {
