@@ -26,16 +26,21 @@ describe("========= Test Util =========", () => {
   
   
   test("Good Test", async () => {
+  // 비동기 함수가 몇 번 호출되었는가를 나타냄
+    expect.assertions(2)
     const getMsg = asynchronusTest.getMsg
-    const goodTest = await getMsg('Good!')
+    const goodTest = await getMsg('Good!')  
     const renderMsg = asynchronusTest.renderMsg
-      expect(goodTest.value).toMatch('Good!');
-      expect(renderMsg.value).toMatch('Good!')
+    expect(goodTest.value).toMatch('Good!');
+    expect(renderMsg.value).toMatch('Good!')
   });
   
   test("Error Test", async () => {
     const getMsg = asynchronusTest.getMsg
-    const errorTest = await getMsg('Error')
-    expect(errorTest).toThrow('Error')
+    try {
+      await getMsg('Error')
+    } catch (e) {
+      expect(e).toMatch('Error')
+    }
   })
 })
